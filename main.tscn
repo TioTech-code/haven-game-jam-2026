@@ -76,45 +76,59 @@ shape = SubResource("CircleShape2D_538ly")
 
 [node name="Block" parent="." unique_id=1945121317 instance=ExtResource("4_1bvp3")]
 position = Vector2(120, 100)
+challenge_name = "FEAR"
 
 [node name="Block2" parent="." unique_id=1175686412 instance=ExtResource("4_1bvp3")]
 position = Vector2(300, 100)
+challenge_name = "DOUBT"
 
 [node name="Block3" parent="." unique_id=795088106 instance=ExtResource("4_1bvp3")]
 position = Vector2(480, 100)
+challenge_name = "STRESS"
 
 [node name="Block4" parent="." unique_id=1464309017 instance=ExtResource("4_1bvp3")]
 position = Vector2(660, 100)
+challenge_name = "PRESSURE"
 
 [node name="Block5" parent="." unique_id=968213411 instance=ExtResource("4_1bvp3")]
 position = Vector2(840, 100)
+challenge_name = "FAILURE"
 
 [node name="Block6" parent="." unique_id=313497452 instance=ExtResource("4_1bvp3")]
 position = Vector2(120, 150)
+challenge_name = "WORRY"
 
 [node name="Block7" parent="." unique_id=156611955 instance=ExtResource("4_1bvp3")]
 position = Vector2(300, 150)
+challenge_name = "DELAY"
 
 [node name="Block8" parent="." unique_id=787649145 instance=ExtResource("4_1bvp3")]
 position = Vector2(480, 150)
+challenge_name = "MISTAKE"
 
 [node name="Block9" parent="." unique_id=1002940147 instance=ExtResource("4_1bvp3")]
 position = Vector2(660, 150)
+challenge_name = "REJECTION"
 
 [node name="Block10" parent="." unique_id=178508662 instance=ExtResource("4_1bvp3")]
 position = Vector2(840, 150)
+challenge_name = "CHANGE"
 
 [node name="Block11" parent="." unique_id=33697032 instance=ExtResource("4_1bvp3")]
 position = Vector2(120, 200)
+challenge_name = "LOSS"
 
 [node name="Block12" parent="." unique_id=1187843188 instance=ExtResource("4_1bvp3")]
 position = Vector2(300, 200)
+challenge_name = "ANGER"
 
 [node name="Block13" parent="." unique_id=1129046987 instance=ExtResource("4_1bvp3")]
 position = Vector2(480, 200)
 
 [node name="Block14" parent="." unique_id=586368710 instance=ExtResource("4_1bvp3")]
 position = Vector2(660, 200)
+challenge_name = "CHALLENGE"
 
 [node name="Block15" parent="." unique_id=1071769581 instance=ExtResource("4_1bvp3")]
 position = Vector2(840, 200)
+challenge_name = "FALL"

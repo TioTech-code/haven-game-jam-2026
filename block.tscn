@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://db6dovpcr5asm"]
 
-[ext_resource type="Texture2D" uid="uid://317au8onjalt" path="res://icon.svg" id="1_im0tn"]
 [ext_resource type="Script" uid="uid://sxkhjeg5eoi0" path="res://block.gd" id="1_xfwl5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_538ly"]
@@ -9,9 +8,16 @@ size = Vector2(84, 26)
 [node name="Block" type="StaticBody2D" unique_id=1945121317]
 script = ExtResource("1_xfwl5")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1380971443]
-scale = Vector2(0.65, 0.2)
-texture = ExtResource("1_im0tn")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1617970959]
 shape = SubResource("RectangleShape2D_538ly")
+
+[node name="ChallengeLabel" type="Label" parent="." unique_id=1257373585]
+offset_left = -55.0
+offset_top = -10.0
+offset_right = -15.0
+offset_bottom = 13.0
+offset_transform_position = Vector2(110, 20)
+theme_override_font_sizes/font_size = 11
+text = "SETBACK"
+horizontal_alignment = 1
+vertical_alignment = 1
