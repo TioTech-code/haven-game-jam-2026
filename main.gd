@@ -37,7 +37,19 @@ func ball_lost() -> void:
 	if lives <= 0:
 		end_game(false)
 	else:
+		activate_bounce_back()
 		$Ball.reset_ball()
+
+func activate_bounce_back() -> void:
+	$Paddle.scale.x = min($Paddle.scale.x + 0.25, 1.5)
+
+	message_label.text = "BOUNCE BACK! PADDLE UPGRADED"
+	message_label.show()
+
+	await get_tree().create_timer(1.2).timeout
+
+	if not game_finished:
+		message_label.hide()
 
 func update_hud() -> void:
 	score_label.text = "Score: " + str(score)
