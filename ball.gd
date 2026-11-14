@@ -10,6 +10,11 @@ func _physics_process(delta: float) -> void:
 	if collision:
 		direction = direction.bounce(collision.get_normal())
 
+		var collider := collision.get_collider()
+
+		if collider and collider.has_method("hit"):
+			collider.call("hit")
+
 	if position.x <= 10:
 		direction.x = abs(direction.x)
 		position.x = 10

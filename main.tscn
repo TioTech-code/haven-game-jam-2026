@@ -25,6 +25,7 @@ shape = SubResource("RectangleShape2D_538ly")
 [node name="Ball" type="CharacterBody2D" parent="." unique_id=264082921]
 position = Vector2(480, 430)
 script = ExtResource("3_h2yge")
+speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=838108271]
 scale = Vector2(0.16, 0.16)
