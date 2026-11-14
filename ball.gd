@@ -21,6 +21,7 @@ func _physics_process(delta: float) -> void:
         direction.x = -abs(direction.x)
         position.x = 950
 
+<<<<<<< HEAD
     if position.y <= 10:
         direction.y = abs(direction.y)
         position.y = 10
@@ -32,6 +33,26 @@ func _physics_process(delta: float) -> void:
             return
 
         reset_ball()
+=======
+	if position.x <= 10:
+		direction.x = abs(direction.x)
+		position.x = 10
+	elif position.x >= 950:
+		direction.x = -abs(direction.x)
+		position.x = 950
+
+	if position.y <= 10:
+		direction.y = abs(direction.y)
+		position.y = 10
+	elif position.y > 550:
+		var game := get_tree().current_scene
+
+		if game and game.has_method("ball_lost"):
+			game.call("ball_lost")
+			return
+
+		reset_ball()
+>>>>>>> 5fcb1b6643ec6978eb930b739b994a1c97a96588
 
 func reset_ball() -> void:
     position = Vector2(480, 430)
