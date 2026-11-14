@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dnhvqyr0thgn6" path="res://paddle.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://317au8onjalt" path="res://icon.svg" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://bfhw3t7cebaxw" path="res://ball.gd" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://db6dovpcr5asm" path="res://block.tscn" id="4_1bvp3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_538ly"]
 size = Vector2(115, 23)
@@ -25,7 +26,6 @@ shape = SubResource("RectangleShape2D_538ly")
 [node name="Ball" type="CharacterBody2D" parent="." unique_id=264082921]
 position = Vector2(480, 430)
 script = ExtResource("3_h2yge")
-speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=838108271]
 scale = Vector2(0.16, 0.16)
@@ -33,3 +33,48 @@ texture = ExtResource("2_h2yge")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=1345149181]
 shape = SubResource("CircleShape2D_538ly")
+
+[node name="Block" parent="." unique_id=1945121317 instance=ExtResource("4_1bvp3")]
+position = Vector2(120, 100)
+
+[node name="Block2" parent="." unique_id=1175686412 instance=ExtResource("4_1bvp3")]
+position = Vector2(300, 100)
+
+[node name="Block3" parent="." unique_id=795088106 instance=ExtResource("4_1bvp3")]
+position = Vector2(480, 100)
+
+[node name="Block4" parent="." unique_id=1464309017 instance=ExtResource("4_1bvp3")]
+position = Vector2(660, 100)
+
+[node name="Block5" parent="." unique_id=968213411 instance=ExtResource("4_1bvp3")]
+position = Vector2(840, 100)
+
+[node name="Block6" parent="." unique_id=313497452 instance=ExtResource("4_1bvp3")]
+position = Vector2(120, 150)
+
+[node name="Block7" parent="." unique_id=156611955 instance=ExtResource("4_1bvp3")]
+position = Vector2(300, 150)
+
+[node name="Block8" parent="." unique_id=787649145 instance=ExtResource("4_1bvp3")]
+position = Vector2(480, 150)
+
+[node name="Block9" parent="." unique_id=1002940147 instance=ExtResource("4_1bvp3")]
+position = Vector2(660, 150)
+
+[node name="Block10" parent="." unique_id=178508662 instance=ExtResource("4_1bvp3")]
+position = Vector2(840, 150)
+
+[node name="Block11" parent="." unique_id=33697032 instance=ExtResource("4_1bvp3")]
+position = Vector2(120, 200)
+
+[node name="Block12" parent="." unique_id=1187843188 instance=ExtResource("4_1bvp3")]
+position = Vector2(300, 200)
+
+[node name="Block13" parent="." unique_id=1129046987 instance=ExtResource("4_1bvp3")]
+position = Vector2(480, 200)
+
+[node name="Block14" parent="." unique_id=586368710 instance=ExtResource("4_1bvp3")]
+position = Vector2(660, 200)
+
+[node name="Block15" parent="." unique_id=1071769581 instance=ExtResource("4_1bvp3")]
+position = Vector2(840, 200)
