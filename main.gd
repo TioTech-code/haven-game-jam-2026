@@ -1,5 +1,5 @@
 extends Node2D
-
+var game_started: bool = false
 var score: int = 0
 var blocks_remaining: int = 15
 var lives: int = 3
@@ -12,9 +12,23 @@ var game_finished: bool = false
 
 func _ready() -> void:
 	update_hud()
-	message_label.hide()
 	restart_button.hide()
+
+	message_label.text = "PRESS SPACE TO START"
+	message_label.show()
+
+	$Ball.set_physics_process(false)
 	restart_button.pressed.connect(_on_restart_button_pressed)
+	
+func _unhandled_input(event: InputEvent) -> void:
+	if (
+		not game_started
+		and not game_finished
+		and event.is_action_pressed("ui_accept")
+	):
+		game_started = true
+		message_label.hide()
+		$Ball.set_physics_process(true)
 
 func block_destroyed() -> void:
 	if game_finished:
