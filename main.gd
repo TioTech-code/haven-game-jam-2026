@@ -1,4 +1,5 @@
 extends Node2D
+
 var game_started: bool = false
 var score: int = 0
 var blocks_remaining: int = 15
@@ -10,6 +11,10 @@ var game_finished: bool = false
 @onready var message_label: Label = $HUD/MessageLabel
 @onready var restart_button: Button = $HUD/RestartButton
 
+@onready var block_sound: AudioStreamPlayer = $BlockSound
+@onready var life_sound: AudioStreamPlayer = $LifeSound
+@onready var victory_sound: AudioStreamPlayer = $VictorySound
+
 func _ready() -> void:
 	update_hud()
 	restart_button.hide()
@@ -19,7 +24,7 @@ func _ready() -> void:
 
 	$Ball.set_physics_process(false)
 	restart_button.pressed.connect(_on_restart_button_pressed)
-	
+
 func _unhandled_input(event: InputEvent) -> void:
 	if (
 		not game_started
@@ -34,6 +39,7 @@ func block_destroyed() -> void:
 	if game_finished:
 		return
 
+	block_sound.play()
 	score += 10
 	blocks_remaining -= 1
 	update_hud()
@@ -45,6 +51,7 @@ func ball_lost() -> void:
 	if game_finished:
 		return
 
+	life_sound.play()
 	lives -= 1
 	update_hud()
 
@@ -76,6 +83,7 @@ func end_game(player_won: bool) -> void:
 
 	if player_won:
 		message_label.text = "YOU BOUNCED BACK!"
+		victory_sound.play()
 	else:
 		message_label.text = "KEEP GOING — BOUNCE BACK!"
 

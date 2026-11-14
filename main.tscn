@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://3dy0uojv4fk5" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="Script" uid="uid://bfhw3t7cebaxw" path="res://ball.gd" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://db6dovpcr5asm" path="res://block.tscn" id="4_1bvp3"]
+[ext_resource type="AudioStream" uid="uid://bhjfjre7tftlk" path="res://audio/block_hit.ogg" id="5_272bh"]
+[ext_resource type="AudioStream" uid="uid://dlc4h7jasjnsk" path="res://audio/life_lost.ogg" id="6_5vw27"]
+[ext_resource type="AudioStream" uid="uid://c110p2hwwg7pv" path="res://audio/victory.ogg" id="7_kek77"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_538ly"]
 size = Vector2(115, 23)
@@ -138,3 +141,15 @@ challenge_name = "CHALLENGE"
 [node name="Block15" parent="." unique_id=1071769581 instance=ExtResource("4_1bvp3")]
 position = Vector2(840, 200)
 challenge_name = "FALL"
+
+[node name="BlockSound" type="AudioStreamPlayer" parent="." unique_id=136702264]
+stream = ExtResource("5_272bh")
+volume_db = -8.0
+
+[node name="LifeSound" type="AudioStreamPlayer" parent="." unique_id=643017249]
+stream = ExtResource("6_5vw27")
+volume_db = -8.0
+
+[node name="VictorySound" type="AudioStreamPlayer" parent="." unique_id=202619914]
+stream = ExtResource("7_kek77")
+volume_db = -6.0

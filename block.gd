@@ -5,6 +5,8 @@ extends StaticBody2D
 
 @onready var challenge_label: Label = $ChallengeLabel
 
+var already_hit: bool = false
+
 func _ready() -> void:
 	challenge_label.text = challenge_name
 	queue_redraw()
@@ -15,6 +17,11 @@ func _draw() -> void:
 	draw_rect(block_shape, Color("#FFFFFF"), false, 2.0)
 
 func hit() -> void:
+	if already_hit:
+		return
+
+	already_hit = true
+
 	var game := get_tree().current_scene
 
 	if game.has_method("block_destroyed"):
