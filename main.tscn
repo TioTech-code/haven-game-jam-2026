@@ -25,6 +25,25 @@ theme_override_font_sizes/font_size = 24
 text = "Score: 0 
 "
 
+[node name="LivesLabel" type="Label" parent="HUD" unique_id=453219859]
+offset_left = 820.0
+offset_top = 20.0
+offset_right = 881.0
+offset_bottom = 43.0
+text = "Lives: 3 "
+
+[node name="MessageLabel" type="Label" parent="HUD" unique_id=1406884187]
+offset_left = 320.0
+offset_top = 250.0
+offset_right = 487.0
+offset_bottom = 273.0
+text = "YOU BOUNCED BACK!"
+
+[node name="RestartButton" type="Button" parent="HUD" unique_id=557692352]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Play Again"
+
 [node name="Paddle" type="CharacterBody2D" parent="." unique_id=1313583428]
 position = Vector2(480, 490)
 script = ExtResource("1_0xm2m")
