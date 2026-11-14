@@ -4,54 +4,57 @@ extends CharacterBody2D
 var direction := Vector2(1, -1).normalized()
 
 func _physics_process(delta: float) -> void:
-    var collision := move_and_collide(direction * speed * delta)
+	var collision := move_and_collide(direction * speed * delta)
 
-    if collision:
-        direction = direction.bounce(collision.get_normal())
-        var collider := collision.get_collider()
+	if collision:
+		direction = direction.bounce(collision.get_normal())
+		var collider := collision.get_collider()
 
-        if collider and collider.has_method("hit"):
-            collider.call("hit")
+		if collider and collider.has_method("hit"):
+			collider.call("hit")
 
-    # Keep the ball inside the screen
-    if position.x <= 10:
-        direction.x = abs(direction.x)
-        position.x = 10
-    elif position.x >= 950:
-        direction.x = -abs(direction.x)
-        position.x = 950
-        
-    if position.y <= 10:
-        direction.y = abs(direction.y)
-        position.y = 10
-    elif position.y > 550:
-        var game := get_tree().current_scene
+	# Keep the ball inside the screen
+	if position.x <= 10:
+		direction.x = abs(direction.x)
+		position.x = 10
+	elif position.x >= 950:
+		direction.x = -abs(direction.x)
+		position.x = 950
+		
+	if position.y <= 10:
+		direction.y = abs(direction.y)
+		position.y = 10
+	elif position.y > 550:
+		var game := get_tree().current_scene
 
-        if game and game.has_method("ball_lost"):
-            game.call("ball_lost")
-            return
+		if game and game.has_method("ball_lost"):
+			game.call("ball_lost")
+			return
 
-        reset_ball()
+		reset_ball()
 
-    if position.x <= 10:
-        direction.x = abs(direction.x)
-        position.x = 10
-    elif position.x >= 950:
-        direction.x = -abs(direction.x)
-        position.x = 950
+	if position.x <= 10:
+		direction.x = abs(direction.x)
+		position.x = 10
+	elif position.x >= 950:
+		direction.x = -abs(direction.x)
+		position.x = 950
 
-    if position.y <= 10:
-        direction.y = abs(direction.y)
-        position.y = 10
-    elif position.y > 550:
-        var game := get_tree().current_scene
+	if position.y <= 10:
+		direction.y = abs(direction.y)
+		position.y = 10
+	elif position.y > 550:
+		var game := get_tree().current_scene
 
-        if game and game.has_method("ball_lost"):
-            game.call("ball_lost")
-            return
+		if game and game.has_method("ball_lost"):
+			game.call("ball_lost")
+			return
 
-        reset_ball()
+		reset_ball()
 
 func reset_ball() -> void:
-    position = Vector2(480, 430)
-    direction = Vector2(1, -1).normalized()
+	position = Vector2(480, 430)
+	direction = Vector2(1, -1).normalized()
+func _draw() -> void:
+	draw_circle(Vector2.ZERO, 10.0, Color("#FACC15"))
+	draw_arc(Vector2.ZERO, 10.0, 0, TAU, 32, Color("#FFFFFF"), 2.0)   

@@ -9,3 +9,7 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 	position.x = clamp(position.x, 60.0, 900.0)
+func _draw() -> void:
+	var paddle_shape := Rect2(-58, -12, 116, 24)
+	draw_rect(paddle_shape, Color("#22D3EE"), true)
+	draw_rect(paddle_shape, Color("#FFFFFF"), false, 2.0)

@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dnhvqyr0thgn6" path="res://paddle.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://3dy0uojv4fk5" path="res://main.gd" id="1_lquwl"]
-[ext_resource type="Texture2D" uid="uid://317au8onjalt" path="res://icon.svg" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://bfhw3t7cebaxw" path="res://ball.gd" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://db6dovpcr5asm" path="res://block.tscn" id="4_1bvp3"]
 
@@ -44,13 +43,26 @@ offset_right = 8.0
 offset_bottom = 8.0
 text = "Play Again"
 
+[node name="TitleLabel" type="Label" parent="HUD" unique_id=1222680304]
+offset_left = 375.0
+offset_top = 15.0
+offset_right = 488.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0.83137256, 0.6862745, 0.21568628, 1)
+theme_override_font_sizes/font_size = 28
+text = "BOUNCE BACK"
+
+[node name="InstructionsLabel" type="Label" parent="HUD" unique_id=1210982890]
+offset_left = 310.0
+offset_top = 510.0
+offset_right = 666.0
+offset_bottom = 533.0
+theme_override_font_sizes/font_size = 16
+text = "← → Move   |   Every miss makes you stronger"
+
 [node name="Paddle" type="CharacterBody2D" parent="." unique_id=1313583428]
 position = Vector2(480, 490)
 script = ExtResource("1_0xm2m")
-
-[node name="Sprite2D" type="Sprite2D" parent="Paddle" unique_id=601284019]
-scale = Vector2(0.9, 0.18)
-texture = ExtResource("2_h2yge")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle" unique_id=1627996726]
 shape = SubResource("RectangleShape2D_538ly")
@@ -58,10 +70,6 @@ shape = SubResource("RectangleShape2D_538ly")
 [node name="Ball" type="CharacterBody2D" parent="." unique_id=264082921]
 position = Vector2(480, 430)
 script = ExtResource("3_h2yge")
-
-[node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=838108271]
-scale = Vector2(0.16, 0.16)
-texture = ExtResource("2_h2yge")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=1345149181]
 shape = SubResource("CircleShape2D_538ly")
